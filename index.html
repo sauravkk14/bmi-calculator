@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<style>
+    .main{
+        border: 2px solid grey;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        height:500px;
+    }
+    .inside-container{
+        border: 2px solid black;
+        padding:35px 20px 35px 20px;
+    }
+    .title{
+      display: flex;
+      justify-content: center;
+    }
+    .bar{
+        height:11px;
+    }
+    .bar-title1 h6{
+        font-size:12px;
+        color:grey;
+        margin-right:61px;
+    }
+    .bar-title2 h6{
+        font-size:10px;
+        font-weight: bold;
+        margin-right:75px;
+    }
+    .bar-pointer{
+        font-size: 11px;
+        margin-top: -3px;
+    }
+</style>
+<script type="text/javascript">
+        function CalculateClick()
+        {
+            var h = parseFloat(document.getElementById("height").value);
+            var w = parseFloat(document.getElementById("weight").value);
+
+            var BMI = w/Math.pow(h,2);
+            if(BMI<=61)
+            {
+                document.getElementById("pointer").style.marginLeft="80px";
+                document.getElementById("result").innerHTML=" Underweight BMI: " + Math.round(BMI) ;   
+            }
+            else if(BMI>61 & BMI<=82)
+            {
+                document.getElementById("pointer").style.marginLeft="180px";
+                document.getElementById("result").innerHTML=" Normal BMI: " + Math.round(BMI) ; 
+            }
+            else if(BMI>83 & BMI<=99)
+            {
+                document.getElementById("pointer").style.marginLeft="280px";
+                document.getElementById("result").innerHTML=" Overweight BMI: " + Math.round(BMI) ;
+            }
+            else{
+                document.getElementById("pointer").style.marginLeft="380px";
+                document.getElementById("result").innerHTML=" Obese BMI: " + Math.round(BMI) ;
+            }
+        }
+        
+</script>
+<body>
+    <div class="main container-fluid">
+        <div class="inside-container">
+            <h3>BMI Calculator</h3>
+            <div class="row2 mt-4">
+                <h6>Age(1 year or above)*</h6>
+                <input type="text" id="age">
+                <span>(in years)</span>
+            </div>
+            <div class="row3 d-flex mt-4">
+                <div class="row2 me-4">
+                    <h6>Height*</h6>
+                    <input type="number" id="height" style="width:90px" min="1.35" max="2.40" step="0.01">
+                    <span>(in meters)</span>
+                </div>
+                <div class="row2">
+                    <h6>Weight*</h6>
+                    <input type="number" style="width:90px" id="weight" min="6.0" step="0.01">
+                    <span>(in kg)</span>
+                </div>
+            </div>
+            <button class="btn btn-primary mt-4" onclick="CalculateClick()">Calculate</button>
+            <div class="d-flex">
+               <h3 id="result" class="mt-4"></h3>
+               </div>
+               <div>
+                <h6 id="result1"></h6>
+               </div>
+                <div class="mt-4">
+                    <div class="bar-head2">
+                       <div class="d-flex bar-description1">
+                           <div class="bar-title1">
+                               <h6>Underweight</h6>
+                           </div>
+                           <div class="bar-title1">
+                               <h6>Normal</h6>
+                           </div>
+                            <div class="bar-title1">
+                               <h6>Overweight</h6>
+                            </div>
+                            <div class="bar-title1">
+                               <h6>Obese</h6>
+                            </div>
+                       </div>
+                       <div class="d-flex bar-description2">
+                           <div class="bar-title2">
+                               <h6 id="uw">Below 61kg</h6>
+                           </div>
+                           <div class="bar-title2">
+                               <h6 id="nor">61-82kg</h6>
+                           </div>
+                            <div class="bar-title2">
+                               <h6 id="ow">83-99kg</h6>
+                            </div>
+                            <div class="bar-title2">
+                               <h6 id="ob">Above 99kg</h6>
+                            </div>
+                       </div>
+                    </div>
+                       <div class="bar progress" style="width:440px">
+                           <div class="progress-bar border bg-dark text-white" style="width:110px">
+                           </div>
+                           <div class="progress-bar border bg-info text-white" style="width:110px">
+                           </div>
+                           <div class="progress-bar border bg-dark text-white" style="width:110px">
+                          </div>
+                          <div class="progress-bar border bg-dark text-white" style="width:110px">
+                      </div>
+                       </div>
+                       <div>
+                           <div class=" bar-pointer bi bi-triangle-fill" id="pointer">
+                           </div>
+                       </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
