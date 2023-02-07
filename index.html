@@ -16,9 +16,10 @@
         align-items: center;
         height:500px;
     }
-    .inside-container{
+    .container{
         border: 2px solid black;
         padding:35px 20px 35px 20px;
+        width:440px;
     }
     .title{
       display: flex;
@@ -28,14 +29,15 @@
         height:11px;
     }
     .bar-title1 h6{
-        font-size:12px;
-        color:grey;
-        margin-right:61px;
+        font-size:10px;
+        color:rgb(89, 85, 85);
+        margin-right:48px;
     }
     .bar-title2 h6{
-        font-size:10px;
-        font-weight: bold;
-        margin-right:75px;
+        font-size:8px;
+        color:black;
+        margin-right: 61px;
+
     }
     .bar-pointer{
         font-size: 11px;
@@ -73,7 +75,7 @@
 </script>
 <body>
     <div class="main container-fluid">
-        <div class="inside-container">
+        <div class="container">
             <h3>BMI Calculator</h3>
             <div class="row2 mt-4">
                 <h6>Age(1 year or above)*</h6>
@@ -116,7 +118,7 @@
                             </div>
                        </div>
                        <div class="d-flex bar-description2">
-                           <div class="bar-title2">
+                           <div class="bar-title2 ">
                                <h6 id="uw">Below 61kg</h6>
                            </div>
                            <div class="bar-title2">
@@ -130,7 +132,7 @@
                             </div>
                        </div>
                     </div>
-                       <div class="bar progress" style="width:440px">
+                       <div class="bar progress" style="width:372px">
                            <div class="progress-bar border bg-dark text-white" style="width:110px">
                            </div>
                            <div class="progress-bar border bg-info text-white" style="width:110px">
