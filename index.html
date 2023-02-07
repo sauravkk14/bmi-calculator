@@ -51,24 +51,30 @@
             var w = parseFloat(document.getElementById("weight").value);
 
             var BMI = w/Math.pow(h,2);
-            if(BMI<=61)
+            
+            if(BMI<=18.5)
             {
                 document.getElementById("pointer").style.marginLeft="80px";
                 document.getElementById("result").innerHTML=" Underweight BMI: " + Math.round(BMI) ;   
             }
-            else if(BMI>61 & BMI<=82)
+            else if(BMI>18.5 & BMI<=24.9)
             {
                 document.getElementById("pointer").style.marginLeft="180px";
                 document.getElementById("result").innerHTML=" Normal BMI: " + Math.round(BMI) ; 
             }
-            else if(BMI>83 & BMI<=99)
+            else if(BMI>25 & BMI<=29.9)
             {
                 document.getElementById("pointer").style.marginLeft="280px";
                 document.getElementById("result").innerHTML=" Overweight BMI: " + Math.round(BMI) ;
             }
-            else{
+            else if(BMI>30)
+            {
                 document.getElementById("pointer").style.marginLeft="380px";
                 document.getElementById("result").innerHTML=" Obese BMI: " + Math.round(BMI) ;
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="Please Enter Value" ;
             }
         }
         
