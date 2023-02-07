@@ -42,6 +42,7 @@
     .bar-pointer{
         font-size: 11px;
         margin-top: -3px;
+        margin-left:-3px;
     }
 </style>
 <script type="text/javascript">
@@ -54,22 +55,22 @@
             
             if(BMI<=18.5)
             {
-                document.getElementById("pointer").style.marginLeft="80px";
+                document.getElementById("pointer").style.marginLeft="40px";
                 document.getElementById("result").innerHTML=" Underweight BMI: " + Math.round(BMI) ;   
             }
             else if(BMI>18.5 & BMI<=24.9)
             {
-                document.getElementById("pointer").style.marginLeft="180px";
+                document.getElementById("pointer").style.marginLeft="135px";
                 document.getElementById("result").innerHTML=" Normal BMI: " + Math.round(BMI) ; 
             }
             else if(BMI>25 & BMI<=29.9)
             {
-                document.getElementById("pointer").style.marginLeft="280px";
+                document.getElementById("pointer").style.marginLeft="225px";
                 document.getElementById("result").innerHTML=" Overweight BMI: " + Math.round(BMI) ;
             }
             else if(BMI>30)
             {
-                document.getElementById("pointer").style.marginLeft="380px";
+                document.getElementById("pointer").style.marginLeft="320px";
                 document.getElementById("result").innerHTML=" Obese BMI: " + Math.round(BMI) ;
             }
             else
